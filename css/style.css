@@ -74,6 +74,39 @@ a:hover {
   font-weight: 300;
   line-height: 1.1;
 }
+.social-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #007bff; /* Change this color to match your theme */
+}
+
+.ico-circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background: #f7f7f7;
+  transition: background 0.3s ease;
+}
+
+.ico-circle:hover {
+  background: #007bff; /* Change this color to match your theme */
+  color: #fff;
+}
+
 
 .avatar {
   width: 32px;
