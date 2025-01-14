@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PM Journey</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar (Header copied from index.html) -->
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="#page-top">NEELESH SINGH</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link js-scroll" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll" href="#game">Game</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Intro Section -->
+  <div id="game" class="intro route bg-image" style="background-image: url(img/Back4.png)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h1 class="intro-title mb-4">Welcome to the PM Journey!</h1>
+          <p class="intro-subtitle"><strong class="text-slider">Test your Product Manager instincts!</strong></p>
+          <a href="#scenarios" class="btn btn-primary btn js-scroll px-4">Start Game</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tutorial Section -->
+  <section id="tutorial" class="about-mf sect-pt4 route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h3 class="title-a">How to Play</h3>
+                <p>Welcome to the Product Manager's Journey! You will encounter 10 real-world scenarios faced by PMs. Each scenario has three choices. Choose wisely, as each answer awards points!</p>
+                <p><strong>Points:</strong></p>
+                <ul>
+                  <li>10 points for the best choice</li>
+                  <li>5 points for a moderate choice</li>
+                  <li>1 point for the least effective choice</li>
+                </ul>
+                <p>At the end, you'll receive a verdict based on your score. Ready to see how you rank?</p>
+                <a href="#scenarios" class="btn btn-primary btn">Skip Tutorial</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scenarios Section -->
+  <section id="scenarios" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">Scenarios</h3>
+            <p class="subtitle-a">Select the best option for each scenario.</p>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Scenario Template -->
+        <div class="col-md-6">
+          <div class="service-box">
+            <div class="service-content">
+              <h2 class="s-title">Scenario 1: User Onboarding</h2>
+              <p>Your team is tasked with improving the onboarding experience. Data shows users drop off after the first step.</p>
+              <form>
+                <input type="radio" id="option1" name="scenario1" value="10"> Simplify the onboarding to a single step.<br>
+                <input type="radio" id="option2" name="scenario1" value="5"> Add a tutorial explaining each step.<br>
+                <input type="radio" id="option3" name="scenario1" value="1"> Leave it as it is.<br>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Add more scenarios similarly -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Verdict Section -->
+  <section id="verdict" class="contact-mf route bg-image">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="title-box text-center">
+            <h3 class="title-a">Your Verdict</h3>
+            <p class="subtitle-a">Calculate your score to see where you stand as a PM!</p>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-success" onclick="calculateScore()">Get Verdict</button>
+            <p id="result" class="mt-4"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculateScore() {
+      const scores = document.querySelectorAll("input[type='radio']:checked");
+      let totalScore = 0;
+      scores.forEach((score) => {
+        totalScore += parseInt(score.value);
+      });
+      let result = '';
+      if (totalScore >= 80) result = "Legendary PM!";
+      else if (totalScore >= 60) result = "Great PM!";
+      else if (totalScore >= 40) result = "Average PM.";
+      else result = "Rookie PM.";
+      document.getElementById("result").innerText = "Your score: " + totalScore + ". " + result;
+    }
+  </script>
+</body>
+</html>
