@@ -74,22 +74,6 @@ a:hover {
   font-weight: 300;
   line-height: 1.1;
 }
-.social-links {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.social-icon {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 24px;
-  color: #555;
-  transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-  color: #007bff; /* Change this color to match your theme */
-}
 
 .ico-circle {
   display: inline-block;
