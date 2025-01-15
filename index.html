@@ -85,22 +85,22 @@
           <!--<p class="display-6 color-d">Hello, world!</p>-->
          <h1 class="intro-title mb-4">
         Discover My Digital Footprint in Product 
-        <span class="text-slider">
-            <span class="text-slider-items">Strategy,Innovation,Execution,Growth</span>
-        </span>
+        <span id="slider" class="text-slider"></span>
     </h1>
     <p class="intro-subtitle">
         <strong class="text-slider"></strong>
     </p>
-           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-          <script>
-        $(document).ready(function() {
+    <p class="intro-subtitle">
+        <strong class="text-slider"></strong>
+    </p>
+           <script>
+        document.addEventListener('DOMContentLoaded', function() {
             var items = ['Strategy', 'Innovation', 'Execution', 'Growth'];
             var currentIndex = 0;
-            var slider = $('.text-slider-items');
-            
+            var slider = document.getElementById('slider');
+
             function updateSliderText() {
-                slider.text(items[currentIndex]);
+                slider.textContent = items[currentIndex];
                 currentIndex = (currentIndex + 1) % items.length;
             }
 
@@ -108,6 +108,7 @@
             setInterval(updateSliderText, 2000);
         });
     </script>
+          
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
