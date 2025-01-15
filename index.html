@@ -25,7 +25,20 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+<style>
+        /* Style for the text-slider with color change effect */
+        .text-slider {
+            font-weight: bold;
+            font-size: 2em; /* Adjust the size if needed */
+            transition: color 0.5s ease-in-out; /* Smooth transition for color change */
+        }
 
+        /* Color choices for the text slider */
+        .color-1 { color: #3498db; } /* Blue */
+        .color-2 { color: #e74c3c; } /* Red */
+        .color-3 { color: #2ecc71; } /* Green */
+        .color-4 { color: #f39c12; } /* Yellow */
+    </style>
   <!-- =======================================================
     Theme Name: DevFolio
     Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
@@ -83,16 +96,14 @@
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-         <h1 class="intro-title mb-4">
+          <h1 class="intro-title mb-4">
         Discover My Digital Footprint in Product 
-        <span id="slider" class="text-slider"></span>
+        <span id="slider" class="text-slider color-1"></span>
     </h1>
     <p class="intro-subtitle">
         <strong class="text-slider"></strong>
     </p>
-    <p class="intro-subtitle">
-        <strong class="text-slider"></strong>
-    </p>
+          
            <script>
         document.addEventListener('DOMContentLoaded', function() {
             var items = ['Strategy', 'Innovation', 'Execution', 'Growth'];
@@ -108,7 +119,6 @@
             setInterval(updateSliderText, 2000);
         });
     </script>
-          
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
