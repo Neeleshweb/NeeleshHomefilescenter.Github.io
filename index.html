@@ -104,14 +104,22 @@
         <strong class="text-slider"></strong>
     </p>
           
-           <script>
+          <script>
         document.addEventListener('DOMContentLoaded', function() {
             var items = ['Strategy', 'Innovation', 'Execution', 'Growth'];
+            var colors = ['color-1', 'color-2', 'color-3', 'color-4']; // Array of colors
             var currentIndex = 0;
             var slider = document.getElementById('slider');
 
             function updateSliderText() {
+                // Change the text content and update the color class
                 slider.textContent = items[currentIndex];
+
+                // Remove the old color class and add the new one
+                slider.classList.remove(colors[(currentIndex - 1 + colors.length) % colors.length]);
+                slider.classList.add(colors[currentIndex]);
+
+                // Move to the next index
                 currentIndex = (currentIndex + 1) % items.length;
             }
 
